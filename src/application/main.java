@@ -1,12 +1,13 @@
 package application;
 
 import java.io.File;
+
 import java.io.FileNotFoundException;
 
 import infos.Menu;
 import java.util.Scanner;
 
-public class main {
+public class Main {
 
 	public static Double Km;
 	public static String[][] MatrizCidades;

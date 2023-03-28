@@ -5,8 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import application.main;
-
 public class Cidades {
 
 	public static Integer CidadeP;
@@ -15,7 +13,6 @@ public class Cidades {
 	public static Integer Resp;
 	public static Integer Resp2;
 	public static Integer Resp3;
-
 	public static List<Integer> LCidades = new ArrayList<Integer>(
 			Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23));
 	public static String Cidades = "             Sitema de transporte interestadual \n Aracaju[0]         | Belém[1]          | Belo_Horizonte[2] \n Brasília[3]        | Campo Grande[4]   | Cuiabá[5] \n Curitiba[6]        | Florianópulis[7]  | Fortaleza[8] \n Goiânia[9]         | João_Pessoa[10]   | Maceió[11] \n Manaus[12]         | Natal[13]         | Porto_alegre[14] \n Porto_Velho[15]    | Recife[16]        | Rio_Branco[17] \n Rio_de_Janeiro[18] | Salvador[19]      | São_Luis[20] \n São_Paulo[21]      | Teresina[22]      | Vitória[23] \n ";
@@ -24,7 +21,6 @@ public class Cidades {
 	public static Scanner in = new Scanner(System.in);
 	// Varivavel da cidade de Partida
 	public static void scCidadeP() {
-		
 		CidadeP = in.nextInt();
 	}
 
@@ -95,8 +91,8 @@ public class Cidades {
 			while (LCidades.contains(CidadeF) == false) {
 				System.out.println("Cidade não encontrada insira uma cidade que está na lista");
 				System.out.print(Cidades);
-				System.out.print("Esolha a cidade de partida:");
-				scCidadeP();
+				System.out.print("Esolha a cidade de Destino:");
+				scCidadeF();
 			}
 		}
 	}
