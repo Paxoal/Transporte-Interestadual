@@ -2,7 +2,7 @@ package infos;
 
 import java.util.Scanner;
 
-public class Exit {
+public class Sair {
 
 	public static Integer repExit;
 
@@ -12,12 +12,8 @@ public class Exit {
 		}
 	}
 
-	public static void exitProgram() {
-		if (repExit == 0 || repExit == 1) {
-			if (repExit == 0) {
-				System.exit(0);
+	public static void saidDoPrograma() {
+		System.exit(0);
 
-			}
-		}
 	}
 }

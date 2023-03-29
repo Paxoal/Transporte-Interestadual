@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import application.Main;
+
 public class Cidades {
 
 	public static Integer CidadeP;
@@ -19,6 +21,7 @@ public class Cidades {
 	static String Conf = "\nDeseja confirmar a cidade inserida? Sim[0] ou Não[1] ";
 	static String Conf2 = "\nÉ um transporte direto para a cidade final? Sim[0] ou Não[1]  ";
 	public static Scanner in = new Scanner(System.in);
+
 	// Varivavel da cidade de Partida
 	public static void scCidadeP() {
 		CidadeP = in.nextInt();
@@ -45,7 +48,7 @@ public class Cidades {
 		Resp3 = in.nextInt();
 	}
 
-	public static void EscolhaDeCidadePartida() {
+	public static void escolhaDeCidadePartida() {
 		System.out.print(Cidades);
 		System.out.print("Esolha a cidade de partida:");
 		scCidadeP();
@@ -59,31 +62,27 @@ public class Cidades {
 		}
 	}
 
+	// mudar esse nome
 	public static void ConfDoTransp() {
-		System.out.print(Conf2);
-		scResp2();
-		if (Resp2 == 0 || Resp2 == 1) {
-			if (Resp2 == 1) {
-				System.out.println(Cidades);
-				System.out.print("Esolha a cidade intermediaria:");
+		System.out.println(Cidades);
+		System.out.print("Esolha um ponto de parada:");
+		scCidadeM();
+		if (LCidades.contains(CidadeM) != true) {
+			while (LCidades.contains(CidadeM) == false) {
+				System.out.println("Cidade não encontrada insira uma cidade que está na lista");
+				System.out.print(Cidades);
+				System.out.print("Esolha a cidade de parada:");
 				scCidadeM();
-				if (LCidades.contains(CidadeM) != true) {
-					while (LCidades.contains(CidadeM) == false) {
-						System.out.println("Cidade não encontrada insira uma cidade que está na lista");
-						System.out.print(Cidades);
-						System.out.print("Esolha a cidade de partida:");
-						scCidadeM();
-					}
-					System.out.println("Parada definido em: " + CidadeM);
-				} else {
-					System.out.println("Parada definido em: " + CidadeM);
-				}
 			}
+		}
+		if (Menu.respostaMenu == 1) {
+			Integer distancia = Integer.valueOf(Main.MatrizCidades[CidadeM + 1][CidadeP]);
+			Carga.descarregarPordutos();
 		}
 
 	}
 
-	public static void EscolhaDeCidadeFinal() {
+	public static void escolhaDeCidadeFinal() {
 		System.out.print(Cidades);
 		System.out.print("Esolha a cidade de Destino:");
 		scCidadeF();
@@ -95,5 +94,14 @@ public class Cidades {
 				scCidadeF();
 			}
 		}
+		// Integer distancia = Integer.valueOf(Main.MatrizCidades[CidadeF +
+		// 1][CidadeM]);
+		// System.out.println(distancia);
+	}
+
+	public static void cadastroTransporte() {
+		escolhaDeCidadePartida();
+		ConfDoTransp();
+		// dados estatisticos
 	}
 }
